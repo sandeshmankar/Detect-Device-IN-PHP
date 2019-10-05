@@ -1,12 +1,15 @@
-//detect device android or Iphone using php 
 <?php
+    /**
+     *  detect device android or Iphone using php 
+     */
+    function detect_device(){
         if( stristr($_SERVER['HTTP_USER_AGENT'],'ipad') ) {
-               echo "Iphone";
+            return "ipad";
         } else if( stristr($_SERVER['HTTP_USER_AGENT'],'iphone') || strstr($_SERVER['HTTP_USER_AGENT'],'iphone') ) {
-               echo "Iphone";
+            return  "iphone";
         }  else if( stristr($_SERVER['HTTP_USER_AGENT'],'android') ) {
-               echo "Android";
-        }else{
-             echo "unknown";        
+            return  "android";
         }
+        return  "unknown";        
+    } 
 ?>
